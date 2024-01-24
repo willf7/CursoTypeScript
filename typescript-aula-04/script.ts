@@ -1,9 +1,9 @@
-type Product = {
+interface Product {
   name: string;
   price: number;
   includeKeyboard: boolean;
   hasProduct: number;
-};
+}
 
 function toFillData(data: Product) {
   document.body.innerHTML += `
