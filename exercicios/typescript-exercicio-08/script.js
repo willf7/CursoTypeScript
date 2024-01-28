@@ -1,11 +1,13 @@
-var links = document.querySelectorAll(".link");
-console.log(links);
-links.forEach(function (element) {
-    if (element instanceof HTMLElement) {
-        changeElement(element);
+var btn = document.querySelector("button");
+var nav = document.querySelector("nav");
+btn === null || btn === void 0 ? void 0 : btn.addEventListener("pointerdown", function () {
+    nav === null || nav === void 0 ? void 0 : nav.classList.toggle("active");
+    if (nav === null || nav === void 0 ? void 0 : nav.classList.contains("active")) {
+        btn.setAttribute("aria-label", "Fechar menu");
+        btn.setAttribute("aria-expanded", "true");
+    }
+    else {
+        btn.setAttribute("aria-label", "Abrir menu");
+        btn.setAttribute("aria-expanded", "false");
     }
 });
-function changeElement(value) {
-    value.style.color = "green";
-    value.style.border = "solid gray 3px";
-}

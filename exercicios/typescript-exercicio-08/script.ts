@@ -1,14 +1,13 @@
-const links = document.querySelectorAll(".link");
+const btn = document.querySelector("button");
+const nav = document.querySelector("nav");
 
-console.log(links);
-
-links.forEach((element) => {
-  if (element instanceof HTMLElement) {
-    changeElement(element);
+btn?.addEventListener("pointerdown", () => {
+  nav?.classList.toggle("active");
+  if (nav?.classList.contains("active")) {
+    btn.setAttribute("aria-label", "Fechar menu");
+    btn.setAttribute("aria-expanded", "true");
+  } else {
+    btn.setAttribute("aria-label", "Abrir menu");
+    btn.setAttribute("aria-expanded", "false");
   }
 });
-
-function changeElement(value: HTMLElement) {
-  value.style.color = "green";
-  value.style.border = "solid gray 3px";
-}
